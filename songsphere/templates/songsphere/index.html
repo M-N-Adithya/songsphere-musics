@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <style>
+        .card {
+            background-color: black; /* Set the background color of the cards to black */
+            color: white; /* Set the text color to white for better visibility */
+        }
+
+
+        .genres-section {
+            margin-top: 40px; /* Add margin before the Genres section */
+        }
+        .language-section {
+            margin-top: 40px; /* Add margin before the Genres section */
+        }
+         .fulls {
+            background-image: url("{% static 'songsphere/i4.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+       .card-img-top {
+    width: 100%; /* Make the image take the full width of its container */
+    height: 200px; /* Set a specific height for uniformity */
+    object-fit: cover; /* Maintain image aspect ratio and cover the entire space */
+}
+    </style>
+</head>
+<body>
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="your-logo.png" width="30" height="30" class="d-inline-block align-top" alt="Your Logo">
+
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/songsphere/index">
+          <box-icon type='solid' name='home'></box-icon> Home <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item ml-5">
+        <a class="nav-link" href="#">
+          <box-icon name='music'></box-icon> My Music
+        </a>
+      </li>
+      <li class="nav-item ml-5">
+        <a class="nav-link" href="/app">
+          <box-icon type='solid' name='microphone-alt'></box-icon> Karaoke
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 mr-5">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <ul class="navbar-nav">
+      <div class="dropdown">
+    <button class="dropbtn">Profile
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="/songsphere/login">Login</a>
+
+    </div>
+  </div>
+    </ul>
+  </div>
+</nav>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{% static 'songsphere/i2.jpg' %}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'songsphere/i3.jpg' %}" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'songsphere/i4.jpg' %}" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+<!----------------------------####################Cards#####################---------------------->
+
+<div class="fulls">
+<div class="language-section">
+<div class="card" style="padding-top:2%;">
+  <div class="card-header" style="text-align:center;font-family:'Verdana';font-size:180%;">
+    Choose Language
+  </div>
+</div>
+    </div>
+
+
+
+<div class="row" style="padding-top:2%; padding-left: 4%;">
+
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{% static 'songsphere/eng.jpg' %}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">English</h5>
+            <p class="card-text">Listen to non-stop English Songs</p>
+            <a href="/songsphere/english" class="btn btn-primary">Go English!!!</a>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{% static 'songsphere/telugu.jpg' %}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Telugu</h5>
+            <p class="card-text">Listen to non-stop Telugu Songs</p>
+            <a href="/songsphere/telugu" class="btn btn-primary">Go Telugu!!!</a>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{% static 'songsphere/hindi.jpg' %}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Hindi</h5>
+            <p class="card-text">Listen to non-stop Hindi Songs</p>
+            <a href="/songsphere/hindi" class="btn btn-primary">Go Hindi!!!</a>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="genres-section">
+<div class="card" style="padding-top:2%;">
+  <div class="card-header" style="text-align:center;font-family:'Verdana';font-size:180%;">
+    Genres
+  </div>
+</div>
+</div>
+
+
+
+<div class="row" style="padding-top:2%; padding-left: 4%;">
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{% static 'songsphere/pop.jpg' %}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Pop</h5>
+            <p class="card-text">Listen to non-stop Pop Songs</p>
+            <a href="/songsphere/pop" class="btn btn-primary">Go Pop!!!</a>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{% static 'songsphere/melody.jpg' %}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Melody</h5>
+            <p class="card-text">Listen to non-stop Melody Songs</p>
+            <a href="/songsphere/melody" class="btn btn-primary">Go Melody~~~</a>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{% static 'songsphere/acdc.jpg' %}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Rock</h5>
+            <p class="card-text">Listen to non-stop Rock Songs</p>
+            <a href="/songsphere/rock" class="btn btn-primary">Go Rock!!!</a>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script
+
+src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+</html>

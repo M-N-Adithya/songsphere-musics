@@ -1,0 +1,66 @@
+{% extends 'songsphere/basic.html' %}
+
+{% block title %}Songpost{% endblock %}
+
+{% block styles %}
+{% load static %}
+<style>
+    body {
+        background-image: url("{% static 'songsphere/waves.png' %}");
+        background-size: cover;
+    }
+    .card {
+        width: 18rem;
+        padding-top: 3%;
+        margin-bottom: 20px; /* Add margin between cards */
+    }
+    .card .card-title {
+        color: green;
+        font-weight: 550;
+    }
+    /* Customize backward and forward buttons */
+    .backward-button,
+    .forward-button {
+        background-color: #007bff; /* Blue color */
+        color: white; /* Text color */
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-6" style="padding-top:3%;">
+        <img src="/media/{{ song.image }}" height="200px" width="300px">
+    </div>
+    <div class="col-md-6">
+        <h2 style="padding-top: 6%; color: white; font-weight: 550;">Title: {{ song.name }}</h2>
+        <h5 style="padding-top: 6%; color: white; font-weight: 550;">Singer: {{ song.singer }}</h5>
+        <audio controls id="audioPlayer" style="padding-top: 2%;">
+            <source src="/media/{{song.song}}" type="audio/mpeg">
+        </audio>
+        <div class="mt-2">
+            <button onclick="skipBackward()" class="btn btn-secondary backward-button">Skip Backward 5s</button>
+            <button onclick="skipForward()" class="btn btn-secondary forward-button ml-2">Skip Forward 5s</button>
+        </div>
+        <div class="">
+            <a href="/media/{{ song.song }}" download>
+                <button class="btn btn-outline-danger mt-2">Download Song</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script>
+    const audioPlayer = document.getElementById('audioPlayer');
+
+    function skipBackward() {
+        audioPlayer.currentTime -= 5;
+    }
+
+    function skipForward() {
+        audioPlayer.currentTime += 5;
+    }
+</script>
+{% endblock %}
